@@ -38,7 +38,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bestShows: []
+      user: []
     };
   }
 /*
@@ -53,10 +53,10 @@ class App extends React.Component {
 */
   
       componentDidMount() { //prod
-          axios.get('/api/data')
+          axios.get('/')
               .then(res => {
                   console.log("data recieved: ", res.data[0]);
-                  this.setState({ bestShows: res.data[0] });
+                  this.setState({ user: res.data[0] });
               })
               .catch(alert);
       }
