@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+import express from 'express';
+import router from express.Router();
 
 /* GET home page. */
 router.get('/users', function(req, res, next) {

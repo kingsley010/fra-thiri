@@ -1,12 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import createError from 'http-errors';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import cors from 'cors';
 
-var app = express();
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-app.set('views', path.join(__dirname, 'views'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const app = express();
+app.use(cors());
+
+app.set('views', (__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.set('port', process.env.PORT || 5000);
@@ -19,7 +26,8 @@ app.use(cookieParser());
 
 app.use(express.static('./client/build'));
 
-app.use('/api/v1', require('./routes/new-index.js'))
+import data from './routes/new-index.js';
+app.use('/api/data', data);
 
 app.get("*", (req, res) => { //our GET route needs to point to the index.html in our build
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
@@ -40,8 +48,8 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
-module.exports = app;
-
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
     console.log('Express server listening on port ' + app.get('port'));
 });
+
+export default app;

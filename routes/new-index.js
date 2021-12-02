@@ -1,15 +1,16 @@
 
-var express = require('express');
-var router = express.Router();
+import express from 'express';
+import MongoClient from 'mongodb';
 
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://king:2nov13@king.tatua.mongodb.net/test?retryWrites=true&w=majority";
+const router = express.Router();
+
+const url = "mongodb+srv://king:2nov13@king.tatua.mongodb.net/test?retryWrites=true&w=majority";
 
 
-router.get('/users', (req, res, next) => {
-	MongoClient.connect(url, function(err, db) {
+router.get('/', (req, res, next) => {
+	MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
 		if (err) throw err;
-		var dbo = db.db("test");
+		const dbo = db.db("test");
 		dbo.collection("user").find({}).toArray(function(err, result) {
 			if (err) throw err;
 			console.log('Mongo data coming in hot')
@@ -20,4 +21,4 @@ router.get('/users', (req, res, next) => {
 	}); 
 });
 
-module.exports = router;
+export default router;
