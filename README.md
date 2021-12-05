@@ -12,3 +12,7 @@ This should create an empty .env file.
 ![image](https://user-images.githubusercontent.com/45227826/144761159-8e23896e-228f-4ded-bff3-923441d88579.png)
 
 Click on the pencil-like symbol (the icon on the middle), then add the following: (MONGODB_URI=your-database-url), and save.  
+
+For this tutorial to work on Azure app service (windows environment), a "web.config" file needs to be added to your scm site also (inside /site/wwwroot)
+
+I will add it as a text here (.txt format). However, make sure to name it "web.config" in your scm site in /site/wwwroot.
