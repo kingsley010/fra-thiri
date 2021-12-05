@@ -11,25 +11,25 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() { //dev
+  // componentDidMount() { //dev
+  //   console.log("componentDidMount success")
+  //   axios.get('http://localhost:5000/api/data')
+  //     .then(res => {
+  //       console.log("data recieved: ", res.data);
+  //       this.setState({ bestShows: res.data[0] });
+  //     })
+  //     .catch(alert);
+  // }
+
+  componentDidMount() { //prod
     console.log("componentDidMount success")
-    axios.get('http://localhost:5000/api/data')
+    axios.get('/api/data')
       .then(res => {
         console.log("data recieved: ", res.data);
         this.setState({ bestShows: res.data[0] });
       })
       .catch(alert);
-  }
-
-  //componentDidMount() { //prod
-    //console.log("componentDidMount success")
-    //axios.get('/api/data')
-      //.then(res => {
-        //console.log("data recieved: ", res.data);
-        //this.setState({ bestShows: res.data[0] });
-      //})
-      //.catch(alert);
- // }
+ }
 
 
   render() {
