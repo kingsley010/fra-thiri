@@ -5,7 +5,7 @@ The tutorial for deploying this boilerplate can be found here:
 https://medium.com/@tuna.sogut/how-to-deploy-a-mern-stack-app-to-azure-via-continuous-integration-a3a551526e26?sk=0fc4fa9d7c7072ad7e95b94d7e5733e4
 
 I added an environment variable to hide the database uri using the "dotenv dependency".
-The environment variable, which contains connection to the MongoDB database was not deployed to GitHub because it was added in the .gitignore file.
+The .env file, which contains connection to the MongoDB database was not deployed to GitHub because it was added in the .gitignore file.
 
 To add the details of the environment variable to your web application on Azure app service, navigate to your web app. On the left pane, navigate to configuration, application settings, then "New Applications setting":
 
