@@ -39,7 +39,7 @@ let url = "mongodb+srv://king:2nov13@king.tatua.mongodb.net/test?retryWrites=tru
 
 
 router.get('/', (req, res, next) => {
-	MongoClient.connect(url, function(err, db) {
+	MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
 		if (err) throw err;
 		var dbo = db.db("test");
 		dbo.collection("user").find({}).toArray(function(err, result) {

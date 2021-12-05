@@ -38,6 +38,7 @@ class App extends React.Component {
       <Container>
         <div>
           <h1>Azure MERN Demo</h1>
+          <p> Deploying a MERN (MongoDB Express React Node.js) application to Azure app service and retrieving the data from MongoDB database </p>
           <h2> Chairmen </h2>
           <ul>
             {
