@@ -31,13 +31,13 @@
 
 
 // ############### ES5 ###########################################
-let express = require('express');
-let router = express.Router();
-let dotenv = require('dotenv');
+const express = require('express');
+const router = express.Router();
+const dotenv = require('dotenv');
 dotenv.config();
 
-let MongoClient = require('mongodb').MongoClient;
-let url = process.env.MONGODB_URI;
+const MongoClient = require('mongodb').MongoClient;
+const url = process.env.MONGODB_URI;
 
 
 router.get('/', (req, res, next) => {
