@@ -5,13 +5,17 @@ The tutorial for deploying this boilerplate can be found here:
 https://medium.com/@tuna.sogut/how-to-deploy-a-mern-stack-app-to-azure-via-continuous-integration-a3a551526e26?sk=0fc4fa9d7c7072ad7e95b94d7e5733e4
 
 I added an environment variable to hide the database name using the "dotenv dependency".
-After deploying to Azure app service, kindly navigate to the scm site of your application on Azure (-your-web-app name-.scm.azurewebsites.net/DebugConsole), then add a ".env" file using the command: "type nul > .env".
-  
-This should create an empty .env file.
+The environment variable, which contains connection to the MongoDB database was not added after deploying to Azure app service becauase it was added in the .gitignore file.
 
-![image](https://user-images.githubusercontent.com/45227826/144761159-8e23896e-228f-4ded-bff3-923441d88579.png)
+To add the details of the environment variable to your web application on Azure, navigate to your web app, on the left pane, navigate to configuration, application settings, then "New Applications setting":
 
-Click on the pencil-like symbol (the icon on the middle), then add the following: (MONGODB_URI=your-database-url), and save.  
+![image](https://user-images.githubusercontent.com/45227826/144764024-a9a87463-dd20-40e0-ac0f-184a2f4cbcd0.png)
+
+After that, add the following in the field:
+
+![image](https://user-images.githubusercontent.com/45227826/144764132-018b924d-edbb-4160-b8cc-defa5b1c15a7.png)
+
+The value should be your mongodb uri.
 
 For this tutorial to work on Azure app service (windows environment), a "web.config" file also needs to be added to your scm site (inside /site/wwwroot)
 
