@@ -5,7 +5,7 @@ The tutorial for deploying this boilerplate can be found here:
 https://medium.com/@tuna.sogut/how-to-deploy-a-mern-stack-app-to-azure-via-continuous-integration-a3a551526e26?sk=0fc4fa9d7c7072ad7e95b94d7e5733e4
 
 I added an environment variable to hide the database name using the "dotenv dependency".
-After deploying to Azure app service, kindly navigate to the scm site of your application on Azure(<your-web-app name>.scm.azurewebsites.net/DebugConsole), then add a ".env" file using the command: "type nul > .env".
+After deploying to Azure app service, kindly navigate to the scm site of your application on Azure (<your-web-app name>.scm.azurewebsites.net/DebugConsole), then add a ".env" file using the command: "type nul > .env".
   
 This should create an empty .env file.
 
