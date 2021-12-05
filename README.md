@@ -19,6 +19,4 @@ The value should be your mongodb uri.
 
 When done, click "save".
 
-Lastly, for this tutorial to work on Azure app service (windows environment), a "web.config" file also needs to be added to your scm site (inside /site/wwwroot)
-
-I will add it as a text here (.txt format). However, make sure to name it "web.config" in your scm site in /site/wwwroot.
+Lastly, for this tutorial to work on Azure app service (windows environment), a "web.config" file also needs to be added to your files (in the root folder) and deployed to Azure.
