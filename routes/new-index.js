@@ -8,7 +8,7 @@
 
 // const router = express.Router();
 
-// const url = "mongodb+srv://king:2nov13@king.tatua.mongodb.net/test?retryWrites=true&w=majority";
+// const url = "process.env.MONGODB_URI";
 
 
 // router.get('/', (req, res, next) => {
@@ -33,9 +33,11 @@
 // ############### ES5 ###########################################
 let express = require('express');
 let router = express.Router();
+let dotenv = require('dotenv');
+dotenv.config();
 
 let MongoClient = require('mongodb').MongoClient;
-let url = "mongodb+srv://king:2nov13@king.tatua.mongodb.net/test?retryWrites=true&w=majority";
+let url = process.env.MONGODB_URI;
 
 
 router.get('/', (req, res, next) => {
